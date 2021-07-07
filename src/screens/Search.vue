@@ -32,7 +32,7 @@
         search: function(toFind){                
           axios.post("http://localhost:3000/produtos/filtro/", { palavra: toFind })
               .then( resp =>  this.searchResultData = JSON.stringify(resp.data) )
-              .catch(error => {console.log(error); this.searchResultData = "Rapadura de Goiaba"});          
+              .catch(error => {console.log(error); this.searchResultData = "Não há itens ..."});          
         }                               
       },        
 };
