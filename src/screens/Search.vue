@@ -1,43 +1,43 @@
 <template>
-    <div id="app">
-      <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->      
-      <Navbar />
-      <GeneralCentralArea :notFindMsg="searchResultMsg" />
-    </div>
+	<div>
+		<Navbar />
+		<GeneralCentralArea :receivedData="this.searchResultData" />
+	</div>
 </template>
 
 <script>
   import Navbar from "../components/NavBar.vue";
   import GeneralCentralArea from '../components/GeneralCentralArea.vue';
+  import axios from 'axios';
+  
   
   export default {
       name: "App",
-      props:{
-        searchResultMsg: String
+      data(){
+          return{
+              searchResultData: "",
+          }
+      },
+      props:{  
       },
       components: {
         Navbar,
-        GeneralCentralArea
+        GeneralCentralArea,
       },
-       mounted(){        
-        this.checkSearchResult()  
-       },
+      created(){        
+          const toFind = localStorage.getItem('toFind');
+          this.search(toFind);
+      },      
       methods:{
-        checkSearchResult: function(){
-            const data = localStorage.getItem("searchData");
-            if(data)
-              this.searchResultMsg = "Itens encontrados";
-            else
-              this.searchResultMsg = "Não há itens...";
-        }    
-      }
-  };
+        search: function(toFind){                
+          axios.post("http://localhost:3000/produtos/filtro/", { palavra: toFind })
+              .then( resp =>  this.searchResultData = JSON.stringify(resp.data) )
+              .catch(error => {console.log(error); this.searchResultData = "Rapadura de Goiaba"});          
+        }                               
+      },        
+};
+
 </script>
 
 <style>
-#app {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-}
 </style>

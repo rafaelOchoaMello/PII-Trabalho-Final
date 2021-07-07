@@ -1,6 +1,6 @@
 <template>
     <div id="generalCentralArea-container">
-        <p>{{notFindMsg}}</p>
+        <p>{{receivedData}}</p>
     </div>
 </template>
 
@@ -8,7 +8,7 @@
     export default {
         name: "GeneralCentralArea",
         props:{
-            notFindMsg: String
+            receivedData: String
         },
         components:{            
         },
