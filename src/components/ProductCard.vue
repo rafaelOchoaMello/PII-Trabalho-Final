@@ -1,7 +1,11 @@
 <template>
 	<div class="cardBody">
 		<div class="cardBody-img"></div>
-		<div class="cardBody-info"></div>
+		<div class="cardBody-info">
+            <h3>Titulo</h3>
+            <h5>Tipo</h5>
+            <h4>Valor</h4>
+        </div>
 		<div class="cardBody-btns"></div>
 	</div>
 </template>
@@ -56,6 +60,14 @@
 		border: 1px solid blueviolet;
 		border-radius: 10px;
 	}
+
+    div.cardBody-info > h3, h4, h5{
+        font-family: montserrat, sans-serif;
+        color: rgb(70, 70, 70);
+
+        margin: 0px 0px 10px 0px;
+        padding: 0px;
+    }
 
     div.cardBody-btns{
         width: 210px;

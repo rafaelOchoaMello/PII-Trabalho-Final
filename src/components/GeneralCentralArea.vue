@@ -1,32 +1,11 @@
 <template>
 	<div id="generalCentralArea-container">
 		<h2>{{ pageTitle }}</h2>
-		<p class="searchMSG">{{ notFindMsg }}</p>
+		<p class="searchMSG">{{ receivedData }}</p>
+       <!--  Os produtos estão configurados via flex para uma linha de 4-em-4 -->
 		<div id="productCard-container">
 			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
-			<ProductCard />
 		</div>
-
-		<!-- <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/>
-        <ProductCard/> -->
 	</div>
 </template>
 
@@ -36,7 +15,7 @@
 	export default {
 		name: "GeneralCentralArea",
 		props: {
-			notFindMsg: String,
+			receivedData: String,
 			pageTitle: String,
 		},
 		components: {

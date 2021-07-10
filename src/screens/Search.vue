@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Navbar />
-		<GeneralCentralArea :notFindMsg="this.searchResultData" :pageTitle="this.pageTitle" />
+		<GeneralCentralArea :receivedData="this.searchResultData" :pageTitle="this.pageTitle" />
 	</div>
 </template>
 
