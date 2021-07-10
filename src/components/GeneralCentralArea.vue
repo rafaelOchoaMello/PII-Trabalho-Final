@@ -2,26 +2,16 @@
 	<div id="generalCentralArea-container">
 		<h2>{{ pageTitle }}</h2>
 		<template v-if="this.searchResultStatus === true">
-			<p class="searchMSG">{{ receivedData }}</p>
 			<!--  Os produtos estão configurados via flex para uma linha de 4-em-4 -->
 			<div id="productCard-container">
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
-				<ProductCard />
+				<div v-for="i in this.receivedData" :key="i.id">
+                    <ProductCard :name="i.nome" :type="i.tipo" :value="i.valor"/>
+                </div>
 			</div>
 		</template>
-        <template v-else>
-            <h1 id="noDataMSG">{{receivedData}}</h1>
-        </template>
+		<template v-else>
+			<h1 id="noDataMSG">{{ searchResultMessage }}</h1>
+		</template>
 	</div>
 </template>
 
@@ -30,15 +20,18 @@
 
 	export default {
 		name: "GeneralCentralArea",
+		data() {
+			return { dataArray: null };
+		},
 		props: {
-			receivedData: String,
+			receivedData: Array,
 			searchResultStatus: Boolean,
+			searchResultMessage: String,
 			pageTitle: String,
 		},
 		components: {
 			ProductCard,
-		},
-		methods: {},
+		}
 	};
 </script>
 
@@ -74,9 +67,8 @@
 		box-sizing: border-box;
 	}
 
-    h1#noDataMSG{
-        font-family: montserrat, sans-serif;
-        margin: 40px 0px 0px 50px;
-    }
-
+	h1#noDataMSG {
+		font-family: montserrat, sans-serif;
+		margin: 40px 0px 0px 50px;
+	}
 </style>

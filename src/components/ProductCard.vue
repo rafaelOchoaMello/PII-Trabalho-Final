@@ -2,9 +2,9 @@
 	<div class="cardBody">
 		<div class="cardBody-img"></div>
 		<div class="cardBody-info">
-            <h3>Titulo</h3>
-            <h5>Tipo</h5>
-            <h4>Valor</h4>
+            <h3>{{name}}</h3>
+            <h5>{{type}}</h5>
+            <h4>{{value}}</h4>
         </div>
 		<div class="cardBody-btns"></div>
 	</div>

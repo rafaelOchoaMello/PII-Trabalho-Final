@@ -4,7 +4,8 @@
 		<GeneralCentralArea
 			:receivedData="this.searchResultData"
 			:pageTitle="this.pageTitle"
-      :searchResultStatus="this.searchResultStatus"
+			:searchResultStatus="this.searchResultStatus"
+			:searchResultMessage="this.searchResultMessage"
 		/>
 	</div>
 </template>
@@ -16,19 +17,20 @@
 
 	export default {
 		name: "App",
-		data() {
+		data: function() {
 			return {
-				searchResultData: "",
+				searchResultData: Array,
 				searchResultStatus: Boolean,
+				searchResultMessage: String,
 				pageTitle: "Resultado da pesquisa",
-			};
+			}
 		},
 		props: {},
 		components: {
 			Navbar,
 			GeneralCentralArea,
 		},
-		created() {
+		mounted() {
 			const toFind = localStorage.getItem("toFind");
 			this.search(toFind);
 		},
@@ -39,13 +41,15 @@
 						palavra: toFind,
 					})
 					.then((resp) => {
-						this.searchResultData = JSON.stringify(resp.data);
-            this.searchResultStatus = true;
-          })
+						this.searchResultData = resp.data;
+						this.searchResultStatus = true;
+						this.searchResultMessage = "";
+					})
 					.catch((error) => {
 						console.log(error);
-						this.searchResultData = "Não há itens ...";
-            this.searchResultStatus = false;
+						this.searchResultData = [];
+						this.searchResultStatus = false;
+						this.searchResultMessage = "Não há itens...";
 					});
 			},
 		},
