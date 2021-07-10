@@ -7,7 +7,6 @@
 		<nav id="navBar">
 			<a href="#">Produtos</a>
 			<a href="#">Promoções</a>
-			<a href="#">Destaques</a>
 			<form v-on:submit.prevent>
 				<input
 					type="text"

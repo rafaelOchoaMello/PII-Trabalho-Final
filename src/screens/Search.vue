@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<Navbar />
-		<GeneralCentralArea :receivedData="this.searchResultData" />
+		<GeneralCentralArea :notFindMsg="this.searchResultData" :pageTitle="this.pageTitle" />
 	</div>
 </template>
 
@@ -10,12 +10,12 @@
   import GeneralCentralArea from '../components/GeneralCentralArea.vue';
   import axios from 'axios';
   
-  
   export default {
       name: "App",
       data(){
           return{
               searchResultData: "",
+              pageTitle: "Resultado da pesquisa"
           }
       },
       props:{  
@@ -31,7 +31,7 @@
       methods:{
         search: function(toFind){                
           axios.post("http://localhost:3000/produtos/filtro/", { palavra: toFind })
-              .then( resp =>  this.searchResultData = JSON.stringify(resp.data) )
+              .then( resp =>  this.searchResultData = JSON.stringify(resp.data))
               .catch(error => {console.log(error); this.searchResultData = "Não há itens ..."});          
         }                               
       },        
