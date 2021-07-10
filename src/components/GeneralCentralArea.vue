@@ -1,11 +1,27 @@
 <template>
 	<div id="generalCentralArea-container">
 		<h2>{{ pageTitle }}</h2>
-		<p class="searchMSG">{{ receivedData }}</p>
-       <!--  Os produtos estão configurados via flex para uma linha de 4-em-4 -->
-		<div id="productCard-container">
-			<ProductCard />
-		</div>
+		<template v-if="this.searchResultStatus === true">
+			<p class="searchMSG">{{ receivedData }}</p>
+			<!--  Os produtos estão configurados via flex para uma linha de 4-em-4 -->
+			<div id="productCard-container">
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+				<ProductCard />
+			</div>
+		</template>
+        <template v-else>
+            <h1 id="noDataMSG">{{receivedData}}</h1>
+        </template>
 	</div>
 </template>
 
@@ -16,6 +32,7 @@
 		name: "GeneralCentralArea",
 		props: {
 			receivedData: String,
+			searchResultStatus: Boolean,
 			pageTitle: String,
 		},
 		components: {
@@ -54,6 +71,12 @@
 	#productCard-container {
 		display: flex;
 		flex-flow: row wrap;
-        box-sizing: border-box;
+		box-sizing: border-box;
 	}
+
+    h1#noDataMSG{
+        font-family: montserrat, sans-serif;
+        margin: 40px 0px 0px 50px;
+    }
+
 </style>
