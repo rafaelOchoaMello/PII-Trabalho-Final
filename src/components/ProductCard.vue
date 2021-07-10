@@ -26,7 +26,7 @@
 	div.cardBody {
 		width: 250px;
 		height: 350px;
-		margin: 10px 0px 0px 20px;
+		margin: 25px 15px 25px 40px;
 
 		display: flex;
 		flex-flow: column wrap;
