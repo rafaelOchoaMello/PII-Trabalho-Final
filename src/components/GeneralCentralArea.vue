@@ -2,10 +2,26 @@
     <div id="generalCentralArea-container">
         <h2>{{pageTitle}}</h2>
         <p class="searchMSG">{{notFindMsg}}</p>
+        <div class="productCard-container"></div>
+        <ProductCard/>
+       
+       <!-- <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/>
+        <ProductCard/> -->
     </div>
 </template>
 
 <script>
+import ProductCard from './ProductCard.vue';
+
     export default {
         name: "GeneralCentralArea",
         props:{
@@ -13,9 +29,10 @@
             pageTitle: String,
         },
         components:{            
+            ProductCard
         },
         methods:{
-            
+
         }
     };
 </script>
