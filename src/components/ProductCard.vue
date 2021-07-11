@@ -4,7 +4,7 @@
 		<div class="cardBody-info">
             <h3>{{name}}</h3>
             <h5>{{type}}</h5>
-            <h4>{{value}}</h4>
+            <h4>R$:{{value}}</h4>
         </div>
 		<div class="cardBody-btns"></div>
 	</div>
@@ -36,9 +36,11 @@
 		flex-flow: column wrap;
 		align-items: center;
 
-		border: 1px solid gray;
+		background-color: rgb(247, 247, 247);
+		border: 1px solid rgba(128, 128, 128, 0.063);
 		box-sizing: border-box;
 		border-radius: 10px;
+		box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 	}
 
 	div.cardBody-img {
@@ -47,7 +49,7 @@
 
         margin: 10px 0px 0px 0px;
 
-		border: 1px solid red;
+		border: 1px solid rgba(128, 128, 128, 0.419);
 		border-radius: 10px;
 	}
 
@@ -56,9 +58,6 @@
 		height: 100px;
 
         margin: 10px 0px 0px 0px;
-
-		border: 1px solid blueviolet;
-		border-radius: 10px;
 	}
 
     div.cardBody-info > h3, h4, h5{
