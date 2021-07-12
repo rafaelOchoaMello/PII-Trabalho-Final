@@ -6,7 +6,10 @@
             <h5>{{type}}</h5>
             <h4>R$:{{value}}</h4>
         </div>
-		<div class="cardBody-btns"></div>
+		<div class="cardBody-btns">
+			<button class="cardBtn">Comprar</button>
+			<button class="cardBtn">Reservar</button>
+		</div>
 	</div>
 </template>
 
@@ -71,10 +74,35 @@
     div.cardBody-btns{
         width: 210px;
         height: 50px;
-
         margin: 5px 0px 0px 0px;
 
-        border: 1px solid green;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-around;
     }
+
+	button.cardBtn{
+		width: 80px;
+		height: 45px;
+		transition: 0.5s;
+
+		font-family: montserrat, sans-serif;
+		color: white;
+
+		background-color: rgb(26, 26, 26);
+		border: none;
+
+		cursor: pointer;
+	}
+
+	button.cardBtn:hover{
+		transition: 0.5s;
+		transform: skewX(-7deg);
+
+		width: 95px;
+		height: 45px;
+		box-shadow: 6px 6px 0 goldenrod;
+
+	}
 
 </style>
