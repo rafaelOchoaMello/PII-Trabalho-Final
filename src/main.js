@@ -5,6 +5,7 @@ import VueRouter from 'vue-router';
 //Telas
 import HomeScreen from './screens/Home.vue';
 import Search from './screens/Search.vue';
+import Products from './screens/Products.vue';
 
 Vue.use(VueRouter);
 
@@ -22,6 +23,10 @@ const router = new VueRouter({
     {
       path:'/filtro',
       component: Search
+    },
+    {
+      path:'/products',
+      component: Products
     }
   ]
 });

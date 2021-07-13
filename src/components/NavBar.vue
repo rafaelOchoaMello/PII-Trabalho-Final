@@ -5,7 +5,8 @@
 			<a id="homeLink" href="">Débora Photos</a>
 		</div>
 		<nav id="navBar">
-			<a href="#">Produtos</a>
+			
+			<a href="#" v-on:click="redirectProdutos">Produtos</a>
 			<a href="#">Promoções</a>
 			<form v-on:submit.prevent>
 				<input
@@ -23,12 +24,11 @@
 </template>
 
 <script>
-	//import axios from "axios";
-
 	export default {
 		name: "Navbar",
 		props: {},
 		methods: {
+			redirectProdutos: function() {this.$router.push({path:"/products"})},
 			Teste: function () {
 				const toFind = document.getElementById("searchInput").value;
 				if (toFind) {

@@ -26,8 +26,7 @@
 		props: {
 			receivedData: Array,
 			searchResultStatus: Boolean,
-			searchResultMessage: String,
-			pageTitle: String,
+			searchResultMessage: String,			pageTitle: String,
 		},
 		components: {
 			ProductCard,
