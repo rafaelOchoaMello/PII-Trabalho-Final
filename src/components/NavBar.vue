@@ -7,7 +7,7 @@
 		<nav id="navBar">
 			
 			<a href="#" v-on:click="redirectProdutos">Produtos</a>
-			<a href="#">Promoções</a>
+			<a href="#" v-on:click="redirectPromotions">Promoções</a>
 			<form v-on:submit.prevent>
 				<input
 					type="text"
@@ -29,6 +29,7 @@
 		props: {},
 		methods: {
 			redirectProdutos: function() {this.$router.push({path:"/products"})},
+			redirectPromotions: function() {this.$router.push({path:"/promotions"})},
 			Teste: function () {
 				const toFind = document.getElementById("searchInput").value;
 				if (toFind) {

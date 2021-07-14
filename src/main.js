@@ -6,6 +6,7 @@ import VueRouter from 'vue-router';
 import HomeScreen from './screens/Home.vue';
 import Search from './screens/Search.vue';
 import Products from './screens/Products.vue';
+import Promotions from './screens/Promotions.vue';
 
 Vue.use(VueRouter);
 
@@ -27,6 +28,10 @@ const router = new VueRouter({
     {
       path:'/products',
       component: Products
+    },
+    {
+      path:'/promotions',
+      component: Promotions
     }
   ]
 });
